@@ -1,6 +1,10 @@
 document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
+    loadDeviceProperties();
+}
+
+function loadDeviceProperties() {
     var element = document.getElementById('deviceProperties');
 
     element.innerHTML = 'Device Name: '     + device.name     + '<br />' + 

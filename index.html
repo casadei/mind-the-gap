@@ -10,13 +10,27 @@
         <script src="assets/js/mindthegap.js" type="text/javascript" charset="utf-8"></script>
     </head>
     <body>
-      <div data-role="page">
+      <div data-role="page" id="page-main">
         <div data-role="header">
           <h1>mind-the-gap</h1>
         </div>
 
         <div data-role="content"> 
-          <p id="deviceProperties">Loading device properties...</p>    
+          <ul data-role="listview">          
+            <li><a href="#page-device" data-rel="dialog" data-transition="pop">Dispositivo</a></li>
+          </ul>    
+        </div>
+      </div>
+
+      <div data-role="page" id="page-device">
+        <div data-role="header">
+          <h1>dispositivo</h1>
+        </div>
+
+        <div data-role="content">
+          <div id="deviceProperties">
+            Carregando informa&ccedil;&otilde;es do dispositivo...
+          </div>
         </div>
       </div>
     </body>
