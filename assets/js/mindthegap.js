@@ -8,5 +8,4 @@ function onDeviceReady() {
                         'Device Platform: ' + device.platform + '<br />' + 
                         'Device UUID: '     + device.uuid     + '<br />' + 
                         'Device Version: '  + device.version  + '<br />';
-    }
 }
