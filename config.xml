@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns       = "http://www.w3.org/ns/widgets"
+    xmlns:gap   = "http://phonegap.com/ns/1.0"
+    id      = "com.felipecasadei.mind-the-gap"
+    version     = "1.0.0">
+
+    <name>mind-the-gap</name>
+
+    <description>A proof of concept of PhoneGap.</description>
+
+    <author href="http://github.com/casadei" email="felipe.casadei@gmail.com">Felipe Casadei</author>
+
+    <icon src="icon.png" gap:role="default" />
+
+    <feature name="http://api.phonegap.com/1.0/geolocation"/>
+
+    <feature name="http://api.phonegap.com/1.0/network"/>
+    
+    <preference name="orientation" value="portrait" />
+</widget>
