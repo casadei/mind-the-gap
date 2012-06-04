@@ -73,7 +73,6 @@ function accelerometerError() {
 }
 
 function getGps() {
-    alert('ok');
     navigator.geolocation.getCurrentPosition(gpsSuccess, gpsError, GPS_OPTIONS);
 }
 
