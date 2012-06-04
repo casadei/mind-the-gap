@@ -9,7 +9,8 @@ function onDeviceReady() {
 
 function bindButtons() {
     $('#accelerometer-watch').bind("change", function(event, ui) { 
-        if ($('#accelerometer-watch').is(':checked')) {
+        var checked = $('#accelerometer-watch').is(':checked');
+        if (checked) {
             startAccelerometerWatcher();
         } else {
             stopAccelerometerWatcher();
@@ -20,11 +21,11 @@ function bindButtons() {
 }
 
 function deviceReady() {
-    $('#device-name').innerHTML = device.name;
-    $('#device-cordova').innerHTML = device.cordova;
-    $('#device-platform').innerHTML = device.platform;
-    $('#device-uuid').innerHTML = device.uuid;
-    $('#device-verrsion').innerHTML = device.version;
+    $('#device-name').text(device.name);
+    $('#device-cordova').text(device.cordova);
+    $('#device-platform').text(device.platform);
+    $('#device-uuid').text(device.uuid);
+    $('#device-version').text(device.version);
 }
 
 function getAccelerometer() {
@@ -45,10 +46,10 @@ function stopAccelerometerWatcher() {
 }
 
 function accelerometerSuccess(acceleration) {
-    $('#accelerometer-x').innerHTML = acceleration.x;
-    $('#accelerometer-y').innerHTML = acceleration.y;
-    $('#accelerometer-z').innerHTML = acceleration.z;
-    $('#accelerometer-timestamp').innerHTML = acceleration.timestamp;
+    $('#accelerometer-x').text(acceleration.x);
+    $('#accelerometer-y').text(acceleration.y);
+    $('#accelerometer-z').text(acceleration.z);
+    $('#accelerometer-timestamp').text(acceleration.timestamp);
 }
 
 function accelerometerError() {
