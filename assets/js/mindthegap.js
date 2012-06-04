@@ -1,6 +1,10 @@
 document.addEventListener("deviceready", onDeviceReady, false);
 
+var ACCELEROMETER_OPTIONS = { frequency : 5000 };
+var GPS_OPTIONS = { frequency : 5000, enableHighAccuracy : true, timeout : 10000, maximumAge : 5000 };
+
 var accelerometerWatcher = null;
+var gpsWatcher = null;
 
 function onDeviceReady() {
     bindButtons();
@@ -18,6 +22,17 @@ function bindButtons() {
     });
 
     $('#accelerometer-get').bind("click", getAccelerometer);
+
+    $('#gps-watch').bind("change", function(event, ui) { 
+        var checked = $('#gps-watch').is(':checked');
+        if (checked) {
+            startGpsWatcher();
+        } else {
+            stopGpsWatcher();
+        }
+    });
+
+    $('#gps-get').bind("click", getGps);
 }
 
 function deviceReady() {
@@ -34,7 +49,7 @@ function getAccelerometer() {
 
 function startAccelerometerWatcher() {
     if (!accelerometerWatcher) {
-        accelerometerWatcher = navigator.accelerometer.watchAcceleration(accelerometerSuccess, accelerometerError, { frequency: 5000 });
+        accelerometerWatcher = navigator.accelerometer.watchAcceleration(accelerometerSuccess, accelerometerError, ACCELEROMETER_OPTIONS);
     }
 }
 
@@ -49,9 +64,42 @@ function accelerometerSuccess(acceleration) {
     $('#accelerometer-x').text(acceleration.x);
     $('#accelerometer-y').text(acceleration.y);
     $('#accelerometer-z').text(acceleration.z);
-    $('#accelerometer-timestamp').text(acceleration.timestamp);
+    $('#accelerometer-timestamp').text(new Date(acceleration.timestamp));
 }
 
 function accelerometerError() {
     alert('Erro ao tentar obter as informações do aceler&ocirc;metro.');
+}
+
+function getGps() {
+    navigator.geolocation.getCurrentPosition(gpsSuccess, gpsError);
+}
+
+function startGpsWatcher() {
+    if (!gpsWatcher) {
+        gpsWatcher = navigator.geolocation.watchPosition(gpsSuccess, gpsError, GPS_OPTIONS);
+    }
+}
+
+function stopGpsWatcher() {
+    if (gpsWatcher) {
+        navigator.geolocation.clearWatch(gpsWatcher);
+        gpsWatcher = null;        
+    }
+}
+
+function gpsSuccess(position) {
+    $('#gps-latitude').text(position.coords.latitude);
+    $('#gps-longitude').text(position.coords.longitude);
+    $('#gps-altitude').text(position.coords.altitude);
+    $('#gps-accuracy').text(position.coords.altitude);
+    $('#gps-heading').text(position.coords.heading);
+    $('#gps-speed').text(position.coords.speed);
+    $('#gps-timestamp').text(new Date(position.timestamp));
+    $('#gps-map').attr('src', 'http://maps.google.com/maps/api/staticmap?zoom=14&size=512x512&&markers=color:green%7Clabel:A%7C' + 
+        position.coords.latitude + ',' + position.coords.longitude + '&sensor=true');;
+}
+
+function gpsError() {
+    alert('Erro ao tentar obter as informações do GPS.');
 }

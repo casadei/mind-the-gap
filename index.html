@@ -19,6 +19,7 @@
           <ul data-role="listview">          
             <li><a href="#page-device" data-transition="slide">dispositivo</a></li>
             <li><a href="#page-accelerometer" data-transition="slide">aceler&ocirc;metro</a></li>
+            <li><a href="#page-gps" data-transition="slide">gps</a></li>
           </ul>    
         </div>
       </div>
@@ -73,5 +74,44 @@
             </fieldset>
         </div>
       </div> 
+
+      <div data-role="page" id="page-gps">
+        <div data-role="header">
+          <a href="#" data-rel="back" data-role="button" data-transition="slide">voltar</a>
+          <h1>gps</h1>
+        </div>        
+
+        <div data-role="content">
+            <strong>latitude:</strong>
+            <span id="gps-latitude">aguarde...</span><br />
+            
+            <strong>longitude:</strong>
+            <span id="gps-longitude">aguarde...</span><br />
+            
+            <strong>altitude:</strong>
+            <span id="gps-altitude">aguarde...</span><br />          
+
+            <strong>accuracy:</strong>
+            <span id="gps-accuracy">aguarde...</span><br />          
+
+            <strong>heading:</strong>
+            <span id="gps-heading">aguarde...</span><br />          
+
+            <strong>speed:</strong>
+            <span id="gps-speed">aguarde...</span><br />          
+
+            <strong>timestamp:</strong>
+            <span id="gps-timestamp">aguarde...</span><br />  
+
+            <strong>mapa:</strong><br />
+            <img id="gps-map" src="" width="512" height="512" /><br />
+
+            <br />
+            <fieldset data-role="controlgroup">
+              <label><input type="checkbox" id="gps-watch" data-mini="true">Observar</input></label>
+              <input type="button" id="gps-get" value="Obter"  data-mini="true" />
+            </fieldset>
+        </div>          
+      </div>
     </body>
 </html>
