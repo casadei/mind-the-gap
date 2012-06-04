@@ -12,7 +12,7 @@ function onDeviceReady() {
 }
 
 function bindButtons() {
-    $('#accelerometer-watch').bind("change", function(event, ui) { 
+    $('#accelerometer-watch').bind('change', function(event, ui) { 
         var checked = $('#accelerometer-watch').is(':checked');
         if (checked) {
             startAccelerometerWatcher();
@@ -21,9 +21,9 @@ function bindButtons() {
         }
     });
 
-    $('#accelerometer-get').bind("click", getAccelerometer);
+    $('#accelerometer-get').bind('click', getAccelerometer);
 
-    $('#gps-watch').bind("change", function(event, ui) { 
+    $('#gps-watch').bind('change', function(event, ui) { 
         var checked = $('#gps-watch').is(':checked');
         if (checked) {
             startGpsWatcher();
@@ -93,7 +93,7 @@ function gpsSuccess(position) {
     $('#gps-latitude').text(position.coords.latitude);
     $('#gps-longitude').text(position.coords.longitude);
     $('#gps-altitude').text(position.coords.altitude);
-    $('#gps-accuracy').text(position.coords.altitude);
+    $('#gps-accuracy').text(position.coords.accuracy);
     $('#gps-heading').text(position.coords.heading);
     $('#gps-speed').text(position.coords.speed);
     $('#gps-timestamp').text(new Date(position.timestamp));
