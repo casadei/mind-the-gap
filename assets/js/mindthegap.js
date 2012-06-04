@@ -32,7 +32,8 @@ function bindButtons() {
         }
     });
 
-    $('#gps-get').bind("click", getGps);
+    $('#gps-get').bind('click', getGps);
+    $('#camera-get').bind('click', getPicture);
 }
 
 function deviceReady() {
@@ -102,4 +103,16 @@ function gpsSuccess(position) {
 
 function gpsError() {
     alert('Erro ao tentar obter as informações do GPS.');
+}
+
+function getPicture() {
+    navigator.camera.getPicture( cameraSuccess, cameraError);
+}
+
+function cameraSuccess(imageData) {
+    $('#camera-picture').attr('src', 'data:image/jpeg;base64,' + imageData);
+}
+
+function cameraError(message) {
+    alert('Erro ao tentar obter uma imagem: ' + message);
 }

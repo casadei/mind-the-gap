@@ -20,6 +20,7 @@
             <li><a href="#page-device" data-transition="slide">dispositivo</a></li>
             <li><a href="#page-accelerometer" data-transition="slide">aceler&ocirc;metro</a></li>
             <li><a href="#page-gps" data-transition="slide">gps</a></li>
+            <li><a href="#page-camera" data-transition="slide">c&acirc;mera</a></li>
           </ul>    
         </div>
       </div>
@@ -32,19 +33,19 @@
 
         <div data-role="content">
             <strong>nome:</strong>
-            <span id="device-name">aguarde...</span><br />
+            <span id="device-name" /><br />
             
             <strong>cordova:</strong>
-            <span id="device-cordova">aguarde...</span><br />
+            <span id="device-cordova" /><br />
             
             <strong>plataforma:</strong>
-            <span id="device-platform">aguarde...</span><br />
+            <span id="device-platform" /><br />
             
             <strong>uuid:</strong>
-            <span id="device-uuid">aguarde...</span><br />
+            <span id="device-uuid" /><br />
             
             <strong>vers&atilde;o:</strong>
-            <span id="device-version">aguarde...</span><br />
+            <span id="device-version" /><br />
         </div>
       </div>
 
@@ -56,16 +57,16 @@
 
         <div data-role="content">
             <strong>x:</strong>
-            <span id="accelerometer-x">aguarde...</span><br />
+            <span id="accelerometer-x" /><br />
             
             <strong>y:</strong>
-            <span id="accelerometer-y">aguarde...</span><br />
+            <span id="accelerometer-y" /><br />
             
             <strong>z:</strong>
-            <span id="accelerometer-z">aguarde...</span><br />          
+            <span id="accelerometer-z" /><br />          
 
             <strong>timestamp:</strong>
-            <span id="accelerometer-timestamp">aguarde...</span><br />  
+            <span id="accelerometer-timestamp" /><br />  
 
             <br />
             <fieldset data-role="controlgroup">
@@ -83,34 +84,45 @@
 
         <div data-role="content">
             <strong>latitude:</strong>
-            <span id="gps-latitude">aguarde...</span><br />
+            <span id="gps-latitude" /><br />
             
             <strong>longitude:</strong>
-            <span id="gps-longitude">aguarde...</span><br />
+            <span id="gps-longitude" /><br />
             
             <img id="gps-map" src="" width="250" height="250" /><br />
 
             <strong>altitude:</strong>
-            <span id="gps-altitude">aguarde...</span><br />          
+            <span id="gps-altitude" /><br />          
 
             <strong>accuracy:</strong>
-            <span id="gps-accuracy">aguarde...</span><br />          
+            <span id="gps-accuracy" /><br />          
 
             <strong>heading:</strong>
-            <span id="gps-heading">aguarde...</span><br />          
+            <span id="gps-heading" /><br />          
 
             <strong>speed:</strong>
-            <span id="gps-speed">aguarde...</span><br />          
+            <span id="gps-speed" /><br />          
 
             <strong>timestamp:</strong>
-            <span id="gps-timestamp">aguarde...</span><br />  
+            <span id="gps-timestamp" /><br />  
 
             <br />
             <fieldset data-role="controlgroup">
               <label><input type="checkbox" id="gps-watch" data-mini="true">Observar</input></label>
-              <input type="button" id="gps-get" value="Obter"  data-mini="true" />
+              <input type="button" id="gps-get" value="Obter" data-mini="true" />
             </fieldset>
         </div>          
       </div>
+      <div data-role="page" id="page-camera">
+        <div data-role="header">
+          <a href="#" data-rel="back" data-role="button" data-transition="slide">voltar</a>
+          <h1>c&acirc;mera</h1>
+        </div>
+
+        <div data-role="content">
+            <img id="camera-picture" src="" width="400" height="300" />
+            <input type="button" id="camera-get" value="Obter" data-mini="true" />
+        </div>
+      </div>      
     </body>
 </html>
