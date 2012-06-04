@@ -106,7 +106,7 @@ function gpsError() {
 }
 
 function getPicture() {
-    navigator.camera.getPicture( cameraSuccess, cameraError);
+    navigator.camera.getPicture(cameraSuccess, cameraError);
 }
 
 function cameraSuccess(imageData) {
