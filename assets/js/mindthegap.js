@@ -97,7 +97,7 @@ function gpsSuccess(position) {
     $('#gps-heading').text(position.coords.heading);
     $('#gps-speed').text(position.coords.speed);
     $('#gps-timestamp').text(new Date(position.timestamp));
-    $('#gps-map').attr('src', 'http://maps.google.com/maps/api/staticmap?zoom=14&size250x250&&markers=color:green%7Clabel:A%7C' + 
+    $('#gps-map').attr('src', 'http://maps.google.com/maps/api/staticmap?zoom=14&size=250x250&markers=color:green%7Clabel:A%7C' + 
         position.coords.latitude + ',' + position.coords.longitude + '&sensor=true');;
 }
 
