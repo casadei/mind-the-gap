@@ -2,10 +2,6 @@ document.addEventListener("deviceready", onDeviceReady, false);
 
 var accelerometerWatcher = null;
 
-$(document).ready(function () {
-    bindButtons();
-});
-
 function onDeviceReady() {
     bindButtons();
     deviceReady();
