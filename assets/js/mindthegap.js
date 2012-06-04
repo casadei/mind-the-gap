@@ -1,7 +1,7 @@
 document.addEventListener("deviceready", onDeviceReady, false);
 
 var ACCELEROMETER_OPTIONS = { frequency : 5000 };
-var GPS_OPTIONS = { frequency : 5000, enableHighAccuracy : true, timeout : 10000, maximumAge : 5000 };
+var GPS_OPTIONS = { frequency : 5000 };
 
 var accelerometerWatcher = null;
 var gpsWatcher = null;
