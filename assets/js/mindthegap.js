@@ -1,20 +1,19 @@
 document.addEventListener("deviceready", onDeviceReady, false);
 
-var ACCELEROMETER_OPTIONS = { frequency : 5000 };
-var GPS_OPTIONS = { frequency : 5000, enableHighAccuracy : true };
-
-var CAMERA_OPTIONS = { 
-    quality : 75, 
-    destinationType : Camera.DestinationType.DATA_URL, 
-    sourceType : Camera.PictureSourceType.CAMERA, 
-    allowEdit : false,
-    encodingType: Camera.EncodingType.JPEG
-};
-
-var accelerometerWatcher = null;
-var gpsWatcher = null;
+var ACCELEROMETER_OPTIONS, GPS_OPTIONS, CAMERA_OPTIONS;
+var accelerometerWatcher, gpsWatcher;
 
 function onDeviceReady() {
+    ACCELEROMETER_OPTIONS = { frequency : 5000 };
+    GPS_OPTIONS = { frequency : 5000, enableHighAccuracy : true };
+    CAMERA_OPTIONS = { 
+        quality : 75, 
+        destinationType : Camera.DestinationType.DATA_URL, 
+        sourceType : Camera.PictureSourceType.CAMERA, 
+        allowEdit : false,
+        encodingType: Camera.EncodingType.JPEG
+    };
+
     bindButtons();
     deviceReady();
 }
