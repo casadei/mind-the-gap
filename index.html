@@ -10,14 +10,15 @@
         <script src="assets/js/mindthegap.js" type="text/javascript" charset="utf-8"></script>
     </head>
     <body>
-      <div data-role="page" id="page-main">
+      <div data-role="page" id="page-main" data-title="mind-the-gap">
         <div data-role="header">
           <h1>mind-the-gap</h1>
         </div>
 
         <div data-role="content"> 
           <ul data-role="listview">          
-            <li><a href="#page-device" data-rel="dialog" data-transition="pop">Dispositivo</a></li>
+            <li><a href="#page-device" data-rel="dialog" data-transition="pop">dispositivo</a></li>
+            <li><a href="#page-accelerometer" data-rel="dialog" data-transition="pop">aceler&ocirc;metro</a></li>
           </ul>    
         </div>
       </div>
@@ -42,8 +43,33 @@
             
             <strong>vers&atilde;o:</strong>
             <span id="device-version">aguarde...</span><br />
-          </div>
         </div>
       </div>
+
+      <div data-role="page" id="page-accelerometer">
+        <div data-role="header">
+          <h1>aceler&ocirc;metro</h1>
+        </div>
+
+        <div data-role="content">
+            <strong>x:</strong>
+            <span id="accelerometer-x">aguarde...</span><br />
+            
+            <strong>y:</strong>
+            <span id="accelerometer-y">aguarde...</span><br />
+            
+            <strong>z:</strong>
+            <span id="accelerometer-z">aguarde...</span><br />          
+
+            <strong>timestamp:</strong>
+            <span id="accelerometer-timestamp">aguarde...</span><br />  
+
+            <br />
+            <fieldset data-role="controlgroup">
+              <label><input type="checkbox" id="accelerometer-watch" data-mini="true">Observar</input></label>
+              <input type="button" id="accelerometer-get" value="Obter"  data-mini="true" />
+            </fieldset>
+        </div>
+      </div> 
     </body>
 </html>
