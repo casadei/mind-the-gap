@@ -1,7 +1,7 @@
 document.addEventListener("deviceready", onDeviceReady, false);
 
 var ACCELEROMETER_OPTIONS = { frequency : 5000 };
-var GPS_OPTIONS = { frequency : 5000 };
+var GPS_OPTIONS = { frequency : 5000, enableHighAccuracy : true };
 
 var accelerometerWatcher = null;
 var gpsWatcher = null;
@@ -96,7 +96,7 @@ function gpsSuccess(position) {
     $('#gps-heading').text(position.coords.heading);
     $('#gps-speed').text(position.coords.speed);
     $('#gps-timestamp').text(new Date(position.timestamp));
-    $('#gps-map').attr('src', 'http://maps.google.com/maps/api/staticmap?zoom=14&size=300x300&&markers=color:green%7Clabel:A%7C' + 
+    $('#gps-map').attr('src', 'http://maps.google.com/maps/api/staticmap?zoom=14&size=150x150&&markers=color:green%7Clabel:A%7C' + 
         position.coords.latitude + ',' + position.coords.longitude + '&sensor=true');;
 }
 
