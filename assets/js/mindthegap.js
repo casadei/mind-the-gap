@@ -1,18 +1,11 @@
 document.addEventListener("deviceready", onDeviceReady, false);
 
-var ACCELEROMETER_OPTIONS, GPS_OPTIONS, CAMERA_OPTIONS;
+var ACCELEROMETER_OPTIONS, GPS_OPTIONS;
 var accelerometerWatcher, gpsWatcher;
 
 function onDeviceReady() {
     ACCELEROMETER_OPTIONS = { frequency : 5000 };
     GPS_OPTIONS = { frequency : 5000, enableHighAccuracy : true };
-    CAMERA_OPTIONS = { 
-        quality : 75, 
-        destinationType : Camera.DestinationType.DATA_URL, 
-        sourceType : Camera.PictureSourceType.CAMERA, 
-        allowEdit : false,
-        encodingType: Camera.EncodingType.JPEG
-    };
 
     bindButtons();
     deviceReady();
@@ -40,7 +33,6 @@ function bindButtons() {
     });
 
     $('#gps-get').bind('click', getGps);
-    $('#camera-get').bind('click', getPicture);
 }
 
 function deviceReady() {
@@ -110,16 +102,4 @@ function gpsSuccess(position) {
 
 function gpsError() {
     alert('Erro ao tentar obter as informações do GPS.');
-}
-
-function getPicture() {
-    navigator.camera.getPicture(cameraSuccess, cameraError, CAMERA_OPTIONS);
-}
-
-function cameraSuccess(imageData) {
-    $('#camera-picture').attr('src', 'data:image/jpeg;base64,' + imageData);
-}
-
-function cameraError(message) {
-    alert('Erro ao tentar obter uma imagem: ' + message);
 }
